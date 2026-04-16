@@ -28,12 +28,14 @@ Folks who want to continue learning, improving their skills, and becoming smarte
 ### Agents
 
 - [`Gesserit`](agents/gesserit.md) - a non-emotive assistant that aims to help you learn
+- [`Shai-Hulud`](agents/shai-hulud.md) - just a worm
 
 ### Commands
 
 - [`explore`](commands/explore.md) - work through ideas, explore new technologies, brainstorm new approaches to a problem
-- [`navigate`](commands/navigate.md) (WIP) - orient yourself in an unfamiliar codebase (especially an AI-generated one)
-- [`unstick`](commands/unstick.md) (WIP) - get help with a problem you're stuck on
+- [`orient`](commands/orient.md) - orient yourself in an unfamiliar codebase (especially an AI-generated one)
+- [`unstick`](commands/unstick.md) - get help with a problem you're stuck on
+- [`review`](commands/review.md) - get constructive feedback on your implementations
 
 ## Using the Butlerian Protocol
 
