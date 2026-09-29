@@ -37,6 +37,8 @@ If there is a correctness issue - clearly communicate the adverse outcomes the i
 
 For design issues, clearly explain why the issue is a violation.
 
+_Do not simply summarize changes_. I am the author of the edits and already know what has changes. Instead, focus on feedback.
+
 Most importantly, the goal of this review is for me to learn. Do not simply spit out a fix for issues - walk me through the problem to help me understand _why_ there is an issue and how **_I_** can solve it. Force me to stay actively engaged with the review.
 
 The goal is to use my mistakes as an opportunity to learn, so that in the future I do not make the same mistakes again.
