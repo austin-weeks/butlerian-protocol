@@ -1,6 +1,6 @@
 # Butlerian Protocol
 
-A set of agents and commands for agentic AI coding tools for those who still want to think.
+A set of agents and commands for GenAI coding tools for those who still want to think.
 
 <p align="center">
   <picture>
@@ -15,19 +15,22 @@ A set of agents and commands for agentic AI coding tools for those who still wan
 > [!NOTE]
 > This is a work in progress.
 
-Currently, only [OpenCode](https://opencode.ai/) is supported.
+Supports [OpenCode](https://opencode.ai/) and [Claude Code](https://www.google.com/search?q=antrhopic+being+evil) (prefer _OpenCode_).
 
-_[Claude Code](https://www.google.com/search?q=antrhopic+being+evil) might be supported one day, but you should use OpenCode anyway. [Codex](https://www.reuters.com/legal/government/judge-now-dismisses-lawsuit-by-sam-altmans-sister-accusing-openai-ceo-sexual-2026-03-20/) probably will never be supported._
+_[Codex](https://www.reuters.com/legal/government/judge-now-dismisses-lawsuit-by-sam-altmans-sister-accusing-openai-ceo-sexual-2026-03-20/) will probably never be supported._
 
 ## Who is this for?
 
 Folks who want to continue learning, improving their skills, and becoming smarter. As much as I don't want to admit it, there can be real benefit to using AI tools. However, there are also immense dangers - cognitive offloading, deskilling, AI psychosis, etc. The agent configurations and commands here are designed to limit the agent to a learning and research tool with the explicit purpose of helping you improve, rather than do your work for you.
+
+If you're forced to use AI for work, the `Mentat` agent is a good choice. It is designed to handle narrow tasks like tests, debugging, and small fixes while keeping you in charge of the codebase.
 
 ## Contents
 
 ### Agents
 
 - [`Gesserit`](agents/gesserit.md) - a non-emotive assistant that aims to help you learn
+- [`Mentat`](agents/mentat.md) - a non-emotive assistant for the work you don't want to do (tests, debugging, small fixes)
 - [`Shai-Hulud`](agents/shai-hulud.md) - just a worm
 
 ### Commands
@@ -35,7 +38,12 @@ Folks who want to continue learning, improving their skills, and becoming smarte
 - [`explore`](commands/explore.md) - work through ideas, explore new technologies, brainstorm new approaches to a problem
 - [`orient`](commands/orient.md) - orient yourself in an unfamiliar codebase (especially an AI-generated one)
 - [`unstick`](commands/unstick.md) - get help with a problem you're stuck on
-- [`review`](commands/review.md) - get constructive feedback on your implementations
+- [`spar`](commands/spar.md) - get constructive feedback on your implementations
+- [`slop-jihad`](commands/slop-jihad.md) - skeptical review of someone else's (likely AI-generated) code
+- [`gom-jabbar`](commands/gom-jabbar.md) - review your own changes (allows for mid-refactor or work in progress code)
+- [`fuck-it`](commands/fuck-it.md) - agent implements everything then debriefs you
+- [`navigate`](commands/navigate.md) - agent implements, but walks you through each decision and waits for your feedback
+- [`spice`](commands/spice.md) - consume the spice melange
 
 ## Using the Butlerian Protocol
 
@@ -47,24 +55,22 @@ git clone https://github.com/austin-weeks/butlerian-protocol.git
 cd butlerian-protocol
 ```
 
-Symlink agents.
+Run the install script.
 
 ```sh
-
-mkdir -p ~/.config/opencode/agents
-
-ln -s "$(pwd)/agents" ~/.config/opencode/agents/butlerian
+./install.sh
 ```
 
-Symlink commands.
+This symlinks the repo into each tool's config directory which allows edits in the repo to take effect without manually copying files:
 
-```sh
-mkdir -p ~/.config/opencode/commands
+| Repo                         | OpenCode                                 | Claude Code                                        |
+| ---------------------------- | ---------------------------------------- | -------------------------------------------------- |
+| `agents/` (`mode: primary`)  | `~/.config/opencode/agents/butlerian/`   | `~/.claude/output-styles/` (select with `/config`) |
+| `agents/` (`mode: subagent`) | `~/.config/opencode/agents/butlerian/`   | `~/.claude/agents/`                                |
+| `commands/`                  | `~/.config/opencode/commands/butlerian/` | `~/.claude/commands/butlerian/`                    |
+| `skills/`                    | read from `~/.claude/skills/`            | `~/.claude/skills/`                                |
 
-ln -s "$(pwd)/commands" ~/.config/opencode/commands/butlerian
-```
-
-This allows OpenCode to read agent and command files in the local `butlerian-protocol` repo without you needing to copy them over.
+Agent files are shared between both tools. Re-run the script after adding a new agent or skill.
 
 ## Tips
 

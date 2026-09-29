@@ -1,6 +1,7 @@
 ---
 description: improve your skills rather than offload work
 mode: primary
+keep-coding-instructions: true
 permission:
   webfetch: allow
   edit: ask
